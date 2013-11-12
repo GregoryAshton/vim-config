@@ -130,3 +130,6 @@ set foldlevel=99
 
 " Nerd tree
 map <leader>n :NERDTreeToggle<CR>
+
+" Turn of smartindento
+set nosmartindent
