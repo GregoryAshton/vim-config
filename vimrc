@@ -1,5 +1,3 @@
-" An example for a vimrc file.
-"
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2011 Apr 15
 "
@@ -103,6 +101,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+match OverLength /\%81v.*/
 
 " Tab Control (others)
 map <A-1> 1gt
