@@ -101,8 +101,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-match OverLength /\%81v.*/
+autocmd FileType py,c highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+autocmd FileType py,c match OverLength /\%81v.*/
 
 " Tab Control (others)
 map <A-1> 1gt
@@ -133,3 +133,8 @@ map <leader>n :NERDTreeToggle<CR>
 
 " Turn of smartindento
 set nosmartindent
+
+" Change error color 
+highlight clear SpellBad
+highlight SpellBad cterm=bold ctermfg=green 
+
