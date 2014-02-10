@@ -137,4 +137,4 @@ set nosmartindent
 " Change error color 
 highlight clear SpellBad
 highlight SpellBad cterm=bold ctermfg=green 
-
+colorscheme github
