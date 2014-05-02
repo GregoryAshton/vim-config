@@ -144,3 +144,4 @@ set nosmartindent
 " Change error color 
 highlight clear SpellBad
 highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green 
+
