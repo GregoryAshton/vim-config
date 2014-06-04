@@ -154,3 +154,9 @@ let g:pydiction_location = '/home/greg/.vim/bundle/pydiction/complete-dict'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
+
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
