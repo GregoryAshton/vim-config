@@ -146,4 +146,11 @@ highlight clear SpellBad
 highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green 
 
 filetype plugin on
+
+" Pydiction
 let g:pydiction_location = '/home/greg/.vim/bundle/pydiction/complete-dict'
+
+" Vim-latex
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux'
+let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
