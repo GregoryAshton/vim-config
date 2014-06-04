@@ -145,3 +145,5 @@ set nosmartindent
 highlight clear SpellBad
 highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green 
 
+filetype plugin on
+let g:pydiction_location = '/home/greg/.vim/bundle/pydiction/complete-dict'
