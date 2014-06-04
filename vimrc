@@ -144,3 +144,8 @@ set nosmartindent
 " Change error color 
 highlight clear SpellBad
 highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green 
+
+
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux'
+let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'

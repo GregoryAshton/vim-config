@@ -16,3 +16,6 @@
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
 	url = git://git.code.sf.net/p/vim-latex/vim-latex
+[submodule "vim-surround"]
+	path = vim-surround
+	url = https://github.com/tpope/vim-surround.git
