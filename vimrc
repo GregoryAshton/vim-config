@@ -108,7 +108,7 @@ set shiftwidth=4
 set expandtab
 "autocmd FileType py,c highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "autocmd FileType py,c match OverLength /\%81v.*/
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+highlight OverLength ctermbg=darkred ctermfg=white guibg=red
 match OverLength /\%81v.*/
 
 " Tab Control (others)
@@ -148,15 +148,18 @@ highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green
 filetype plugin on
 
 " Pydiction
-let g:pydiction_location = '/home/greg/.vim/bundle/pydiction/complete-dict'
+"let g:pydiction_location = '/home/greg/.vim/bundle/pydiction/complete-dict'
 
 " Vim-latex
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
 
-augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set nocul
-augroup END
+"augroup BgHighlight
+"    autocmd!
+"    autocmd WinEnter * set cul
+"    autocmd WinLeave * set nocul
+"augroup END
+"
+
+let @n = 'v%S)inp.array'
