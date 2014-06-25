@@ -49,9 +49,9 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Set colorscheme in gvim
-if has("gui_running")
-  colorscheme github
-endif
+ if has("gui_running")
+   colorscheme github
+ endif
 
 " Octave syntax
 augroup filetypedetect
@@ -106,10 +106,17 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
 "autocmd FileType py,c highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "autocmd FileType py,c match OverLength /\%81v.*/
-highlight OverLength ctermbg=darkred ctermfg=white guibg=red
-match OverLength /\%81v.*/
+"highlight OverLength ctermbg=darkred ctermfg=white guibg=red
+"match OverLength /\%81v.*/
+
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 " Tab Control (others)
 map <A-1> 1gt
