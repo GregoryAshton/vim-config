@@ -51,6 +51,8 @@ endif
 " Set colorscheme in gvim
 if has("gui_running")
   colorscheme github
+else
+ colorscheme delek
 endif
 
 " Octave syntax
@@ -163,3 +165,4 @@ let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
 "
 
 let @n = 'v%S)inp.array'
+let @s = 'ebvf)S]'
