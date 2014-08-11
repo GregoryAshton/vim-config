@@ -49,17 +49,11 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Set colorscheme in gvim
-<<<<<<< HEAD
 if has("gui_running")
   colorscheme github
 else
  colorscheme delek
 endif
-=======
- if has("gui_running")
-   colorscheme github
- endif
->>>>>>> 437011d183da1cfabc6de3ed28db90bdb6877d62
 
 " Octave syntax
 augroup filetypedetect
