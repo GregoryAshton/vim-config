@@ -49,17 +49,11 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Set colorscheme in gvim
-<<<<<<< HEAD
 if has("gui_running")
   colorscheme github
 else
  colorscheme delek
 endif
-=======
- if has("gui_running")
-   colorscheme github
- endif
->>>>>>> 437011d183da1cfabc6de3ed28db90bdb6877d62
 
 " Octave syntax
 augroup filetypedetect
@@ -177,5 +171,15 @@ let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
 "augroup END
 "
 
+" Python alias
 let @n = 'v%S)inp.array'
 let @s = 'ebvf)S]'
+
+" Copy and Paste
+noremap <C-S-x> "+x
+noremap <C-S-c> "+y
+noremap <C-S-p> "+P
+
+" Latex formatting
+map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
+omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
