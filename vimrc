@@ -164,6 +164,9 @@ let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
 
+" Compile main Latex file in directory
+map <F2> :! grep "documentclass" *.tex -l \| xargs pdflatex <CR>
+
 "augroup BgHighlight
 "    autocmd!
 "    autocmd WinEnter * set cul
