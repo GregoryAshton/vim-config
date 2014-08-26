@@ -67,7 +67,7 @@ if has("autocmd")
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+  filetype plugin indent off
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -186,3 +186,10 @@ noremap <C-S-p> "+P
 " Latex formatting
 map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
+
+" Bash like completion
+set wildmode=longest,list,full
+
+" Ignored file types
+set wildignore+=*.pdf,*.aux,*.bbl,*.blg
+set wildignore+=*.pyc,*.so
