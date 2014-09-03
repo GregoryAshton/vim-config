@@ -48,12 +48,10 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Set colorscheme in gvim
-if has("gui_running")
-  colorscheme github
-else
- colorscheme delek
-endif
+" Set colorscheme
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Octave syntax
 augroup filetypedetect
