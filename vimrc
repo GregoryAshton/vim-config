@@ -7,30 +7,18 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set nobackup		" do not keep a backup file, use versions instead
-
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
+map Q gq " Don't use Ex mode, use Q for formatting
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -52,11 +40,6 @@ endif
 syntax enable
 set background=dark
 colorscheme solarized
-
-" Octave syntax
-augroup filetypedetect
-  au! BufRead,BufNewFile *.m,*.oct set filetype=octave
-augroup END 
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -153,9 +136,6 @@ highlight clear SpellBad
 highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green 
 
 filetype plugin on
-
-" Pydiction
-"let g:pydiction_location = '/home/greg/.vim/bundle/pydiction/complete-dict'
 
 " Vim-latex
 let g:Tex_DefaultTargetFormat='pdf'
