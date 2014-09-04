@@ -40,6 +40,7 @@ endif
 syntax enable
 set background=dark
 colorscheme solarized
+se t_Co=256
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -156,6 +157,9 @@ map <F2> :! grep "documentclass" *.tex -l \| xargs pdflatex <CR>
 " Python alias
 let @n = 'v%S)inp.array'
 let @s = 'ebvf)S]'
+
+" Latex alias
+let @e = 'o\begin{equation}^M^M\end{equation}^['
 
 " Copy and Paste
 noremap <C-S-x> "+x
