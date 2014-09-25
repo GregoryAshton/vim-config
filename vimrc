@@ -36,9 +36,16 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+" Some gui options
+set guioptions-=T "get rid of toolbar
+"set guioptions-=m "get rid of menu
+map <F9> :set guifont=Lucida_Console:h9:cANSI<CR>
+map <F10> :set guifont=Lucida_Console:h10:cANSI<CR>
+map <F11> :set guifont=Lucida_Console:h11:cANSI<CR>
+
 " Set colorscheme
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 se t_Co=256
 
