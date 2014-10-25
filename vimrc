@@ -45,7 +45,7 @@ map <F11> :set guifont=Lucida_Console:h11:cANSI<CR>
 
 " Set colorscheme
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 se t_Co=256
 
