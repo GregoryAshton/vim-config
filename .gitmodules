@@ -1,30 +1,6 @@
 [submodule "pyflakes-pathogen"]
 	path = pyflakes-pathogen
 	url = https://github.com/mitechie/pyflakes-pathogen.git
-[submodule "bundle/pyflakes"]
-	path = bundle/pyflakes
-	url = https://github.com/mitechie/pyflakes-pathogen.git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/vim-scripts/The-NERD-tree.git
 [submodule "vim-latex-vim-latex"]
 	path = vim-latex-vim-latex
 	url = git://git.code.sf.net/p/vim-latex/vim-latex
-[submodule "bundle/vim-latex"]
-	path = bundle/vim-latex
-	url = git://git.code.sf.net/p/vim-latex/vim-latex
-[submodule "bundle/fugitive"]
-	path = bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
-[submodule "bundle/surround"]
-	path = bundle/surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "bundle/git"]
-	path = bundle/git
-	url = https://github.com/tpope/vim-git.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "bundle/vim-repeat"]
-	path = bundle/vim-repeat
-	url = git@github.com:tpope/vim-repeat.git
