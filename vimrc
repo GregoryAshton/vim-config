@@ -1,15 +1,19 @@
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2011 Apr 15
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+" Required Vundle setup
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+Plugin 'mitechie/pyflakes-pathogen'
+Plugin 'tpope/vim-surround'
+Plugin 'ervandew/supertab'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set nobackup		" do not keep a backup file, use versions instead
@@ -122,34 +126,25 @@ map <A-9> 9gt
 
 " http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide#intro
 filetype off
-execute pathogen#incubate()
-execute pathogen#helptags()
+
 syntax on 
 filetype on
 filetype plugin indent on    " enable loading indent file for filetype
-
-" Folding for python
-nnoremap <space> za
-set foldmethod=indent
-set foldlevel=99
-
-" Nerd tree
-map <leader>n :NERDTreeToggle<CR>
 
 " Turn of smartindento
 set nosmartindent
 
 " Change error color 
-highlight clear SpellBad
-highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green 
+"highlight clear SpellBad
+"highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green 
 
 filetype plugin on
 
 " Vim-latex
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_MultipleCompileFormats='pdf, aux'
-let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
-let g:Imap_FreezeImap=1 " Switch off magic
+"let g:Tex_DefaultTargetFormat='pdf'
+"let g:Tex_MultipleCompileFormats='pdf, aux'
+"let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
+"let g:Imap_FreezeImap=1 " Switch off magic
 
 " Compile main Latex file in directory
 map <F2> :! grep "documentclass" *.tex -l \| xargs pdflatex <CR>
