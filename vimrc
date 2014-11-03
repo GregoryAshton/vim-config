@@ -44,9 +44,16 @@ endif
 " Some gui options
 set guioptions-=T "get rid of toolbar
 "set guioptions-=m "get rid of menu
-map <F9> :set guifont=Lucida_Console:h9:cANSI<CR>
-map <F10> :set guifont=Lucida_Console:h10:cANSI<CR>
-map <F11> :set guifont=Lucida_Console:h11:cANSI<CR>
+"map <F9> :set guifont=Lucida_Console:h9:cANSI<CR>
+"map <F10> :set guifont=Lucida_Console:h10:cANSI<CR>
+"map <F11> :set guifont=Lucida_Console:h11:cANSI<CR>
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
 
 " Set colorscheme
 syntax enable
