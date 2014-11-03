@@ -11,6 +11,7 @@ Plugin 'gmarik/vundle'
 Plugin 'mitechie/pyflakes-pathogen'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
+Plugin 'bling/vim-airline'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,6 +53,17 @@ syntax enable
 set background=dark
 colorscheme solarized
 se t_Co=256
+
+" vim-airline 
+let g:airline_theme = 'solarized'
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+" To install the pre-patched font find the relevant ttf file with Powerline 
+" then do:
+" sudo gnome-font-viewer Ubuntu\ Mono\ derivative\ Powerline.ttf
+" to install the font. Finally change the gnome-terminal to accept this.
+
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
