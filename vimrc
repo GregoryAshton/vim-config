@@ -43,10 +43,14 @@ endif
 
 " Some gui options
 set guioptions-=T "get rid of toolbar
-"set guioptions-=m "get rid of menu
+set guioptions-=m "get rid of menu
+
+" Change font size with f* keys
 "map <F9> :set guifont=Lucida_Console:h9:cANSI<CR>
 "map <F10> :set guifont=Lucida_Console:h10:cANSI<CR>
 "map <F11> :set guifont=Lucida_Console:h11:cANSI<CR>
+
+" Set font in GVim to use Powerline patched version
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
@@ -70,7 +74,6 @@ let g:airline_powerline_fonts = 1
 " then do:
 " sudo gnome-font-viewer Ubuntu\ Mono\ derivative\ Powerline.ttf
 " to install the font. Finally change the gnome-terminal to accept this.
-
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -154,8 +157,8 @@ filetype plugin indent on    " enable loading indent file for filetype
 set nosmartindent
 
 " Change error color 
-"highlight clear SpellBad
-"highlight SpellBad term=bold cterm=bold ctermfg=green gui=standout guifg=green 
+highlight clear SpellBad
+highlight SpellBad term=bold cterm=bold ctermfg=White gui=standout guifg=green 
 
 filetype plugin on
 
