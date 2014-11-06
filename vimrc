@@ -12,6 +12,7 @@ Plugin 'mitechie/pyflakes-pathogen'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -146,8 +147,6 @@ map <A-7> 7gt
 map <A-8> 8gt
 map <A-9> 9gt
 
-" http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide#intro
-filetype off
 
 syntax on 
 filetype on
@@ -159,6 +158,13 @@ set nosmartindent
 " Change error color 
 highlight clear SpellBad
 highlight SpellBad term=bold cterm=bold ctermfg=White gui=standout guifg=green 
+
+" git-gutter color hack
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green guifg=green
+highlight GitGutterChange ctermfg=yellow guifg=yellow
+highlight GitGutterDelete ctermfg=red guifg=red
+highlight GitGutterChangeDelete ctermfg=yellow guifg=yellow
 
 filetype plugin on
 
