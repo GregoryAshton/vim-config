@@ -13,6 +13,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -45,6 +46,12 @@ endif
 " Some gui options
 set guioptions-=T "get rid of toolbar
 set guioptions-=m "get rid of menu
+
+" Set working directory to open file
+autocmd BufEnter * silent! lcd %:p:h
+
+" CtrlP search options
+let g:ctrlp_working_path_mode = 'cra'
 
 " Change font size with f* keys
 "map <F9> :set guifont=Lucida_Console:h9:cANSI<CR>
@@ -205,4 +212,4 @@ set wildmode=longest,list,full
 
 " Ignored file types
 set wildignore+=*.pdf,*.aux,*.bbl,*.blg
-set wildignore+=*.pyc,*.so
+set wildignore+=*.pyc,*.so,*.zip
