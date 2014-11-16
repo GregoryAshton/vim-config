@@ -211,5 +211,4 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 set wildmode=longest,list,full
 
 " Ignored file types
-set wildignore+=*.pdf,*.aux,*.bbl,*.blg
-set wildignore+=*.pyc,*.so,*.zip
+set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb
