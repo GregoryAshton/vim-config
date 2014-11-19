@@ -48,7 +48,7 @@ set guioptions-=T "get rid of toolbar
 set guioptions-=m "get rid of menu
 
 " Set working directory to open file
-autocmd BufEnter * silent! lcd %:p:h
+"autocmd BufEnter * silent! lcd %:p:h
 
 " CtrlP search options
 let g:ctrlp_working_path_mode = 'cra'
@@ -211,4 +211,4 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 set wildmode=longest,list,full
 
 " Ignored file types
-set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb
+set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb,*log
