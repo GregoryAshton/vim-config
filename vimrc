@@ -212,3 +212,6 @@ set wildmode=longest,list,full
 
 " Ignored file types
 set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb,*log,*hdf5
+
+" Setting word jumps
+set iskeyword+=,,.
