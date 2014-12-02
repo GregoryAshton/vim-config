@@ -215,3 +215,15 @@ set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb,*log,*hdf5
 
 " Setting word jumps
 set iskeyword+=,,.
+
+" Keystroke to add imports
+nnoremap <leader>p iimport matplotlib.pyplot as plt <CR> import numpy as np<Esc>
+
+" Add graphics
+nnoremap <leader>g i\begin{figure}<CR>
+                   \centering<CR>
+                   \includegraphics[width=0.5\texwidth]{}<CR>
+                   \caption{}<CR>
+                   \label{fig:}<CR>
+                   \end{figure}<Esc>/{<CR>na
+                     
