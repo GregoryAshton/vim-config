@@ -217,7 +217,7 @@ set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb,*log,*hdf5
 set iskeyword+=,,.
 
 " Keystroke to add imports
-nnoremap <leader>p iimport matplotlib.pyplot as plt <CR> import numpy as np<Esc>
+nnoremap <leader>p iimport matplotlib.pyplot as plt <CR>import numpy as np<Esc>
 
 " Add graphics
 nnoremap <leader>g i\begin{figure}<CR>
