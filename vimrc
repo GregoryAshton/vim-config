@@ -14,6 +14,7 @@ Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
+Plugin 'boucherm/ShowMotion'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,6 +43,10 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
+
+" ShowMotion stuff
+source /home/greg/.vim/ShowMotionSettings.vim
+
 
 " Some gui options
 set guioptions-=T "get rid of toolbar
