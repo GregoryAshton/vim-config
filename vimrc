@@ -189,6 +189,9 @@ filetype plugin on
 " Compile main Latex file in directory
 map <F2> :! grep "documentclass" *.tex -l \| xargs pdflatex <CR>
 
+" Open pdf file
+nmap <F12> :call system('evince ' . expand('%:r') . '.pdf') <CR>
+
 "augroup BgHighlight
 "    autocmd!
 "    autocmd WinEnter * set cul
