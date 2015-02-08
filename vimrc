@@ -2,6 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+let hostname = substitute(system('hostname'), '\n', '', '')
+
 " Required Vundle setup
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -65,7 +67,9 @@ let g:ctrlp_working_path_mode = 'cra'
 
 " Set font in GVim to use Powerline patched version
 if has("gui_running")
-  if has("gui_gtk2")
+  if has("gui_gtk2") && hostname == "lenovofedora" 
+    set guifont=Inconsolata\ 10
+  elseif has("gui_gtk2")
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
