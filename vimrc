@@ -16,6 +16,7 @@ Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
+Plugin 'vasconcelloslf/vim-interestingwords'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
