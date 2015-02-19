@@ -20,12 +20,21 @@ Plugin 'kien/ctrlp.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" --------------------------- Normal set up ----------------------------------
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set nobackup		" do not keep a backup file, use versions instead
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+
+" Copy and Paste
+noremap <C-S-x> "+x
+noremap <C-S-c> "+y
+noremap <C-S-p> "+P
+
+" Bash like completion
+set wildmode=longest,list,full
 
 map Q gq " Don't use Ex mode, use Q for formatting
 
@@ -49,18 +58,10 @@ endif
 set guioptions-=T "get rid of toolbar
 set guioptions-=m "get rid of menu
 
-" Set working directory to open file
-"autocmd BufEnter * silent! lcd %:p:h
-
 " CtrlP search options
 let g:ctrlp_working_path_mode = 'cra'
 
-" Change font size with f* keys
-"map <F9> :set guifont=Lucida_Console:h9:cANSI<CR>
-"map <F10> :set guifont=Lucida_Console:h10:cANSI<CR>
-"map <F11> :set guifont=Lucida_Console:h11:cANSI<CR>
-
-" Set font in GVim to use Powerline patched version
+" Set font 
 if has("gui_running")
   if has("gui_gtk2") && hostname == "lenovofedora" 
     set guifont=Inconsolata\ 10
@@ -72,10 +73,9 @@ if has("gui_running")
 endif
 
 " Set colorscheme
-syntax enable
+se t_Co=256
 set background=dark
 colorscheme solarized
-se t_Co=256
 
 " vim-airline 
 let g:airline_theme = 'solarized'
@@ -147,24 +147,13 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" Tab Control (others)
-map <A-1> 1gt
-map <A-2> 2gt
-map <A-3> 3gt
-map <A-4> 4gt
-map <A-5> 5gt
-map <A-6> 6gt
-map <A-7> 7gt
-map <A-8> 8gt
-map <A-9> 9gt
-
 
 syntax on 
 filetype on
 filetype plugin indent on    " enable loading indent file for filetype
 
 " Turn of smartindento
-set nosmartindent
+"set nosmartindent
 
 " Change error color 
 highlight clear SpellBad
@@ -179,53 +168,13 @@ highlight GitGutterChangeDelete ctermfg=yellow guifg=yellow
 
 filetype plugin on
 
-" Vim-latex
-"let g:Tex_DefaultTargetFormat='pdf'
-"let g:Tex_MultipleCompileFormats='pdf, aux'
-"let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode $*'
-"let g:Imap_FreezeImap=1 " Switch off magic
-
+" ---------------- LATEX ---------------------
 " Compile main Latex file in directory
 map <F2> :! grep "documentclass" *.tex -l \| xargs pdflatex <CR>
-
 " Open pdf file
 nmap <F12> :call system('evince ' . expand('%:r') . '.pdf') <CR>
-
-"augroup BgHighlight
-"    autocmd!
-"    autocmd WinEnter * set cul
-"    autocmd WinLeave * set nocul
-"augroup END
-"
-
-" Python alias
-let @n = 'v%S)inp.array'
-let @s = 'ebvf)S]'
-
 " Latex alias
 let @e = 'o\begin{equation}^M^M\end{equation}^['
-
-" Copy and Paste
-noremap <C-S-x> "+x
-noremap <C-S-c> "+y
-noremap <C-S-p> "+P
-
-" Latex formatting
-map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
-omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
-
-" Bash like completion
-set wildmode=longest,list,full
-
-" Ignored file types
-set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb,*log,*hdf5
-
-" Setting word jumps
-"set iskeyword+=,,.
-
-" Keystroke to add imports
-nnoremap <leader>p iimport matplotlib.pyplot as plt <CR>import numpy as np<Esc>
-
 " Add graphics
 nnoremap <leader>g i\begin{figure}[htb]<CR>
                    \\centering<CR>
@@ -233,3 +182,18 @@ nnoremap <leader>g i\begin{figure}[htb]<CR>
                    \\caption{}<CR>
                    \\label{fig:}<CR>
                    \\end{figure}<Esc>?{<CR>3na
+" Ignored file types
+set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb,*log,*hdf5
+" Latex formatting
+map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
+omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
+
+
+" ---------------- PYTHON -------------------
+" Python alias
+let @n = 'v%S)inp.array'
+let @s = 'ebvf)S]'
+" Keystroke to add imports
+nnoremap <leader>p iimport matplotlib.pyplot as plt <CR>import numpy as np<Esc>
+
+
