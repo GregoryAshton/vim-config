@@ -27,6 +27,12 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set number
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 
 " Copy and Paste
 noremap <C-S-x> "+x
@@ -87,73 +93,11 @@ let g:airline_powerline_fonts = 1
 " sudo gnome-font-viewer Ubuntu\ Mono\ derivative\ Powerline.ttf
 " to install the font. Finally change the gnome-terminal to accept this.
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent off
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
-
-" Other 
-set number
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-"autocmd FileType py,c highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-"autocmd FileType py,c match OverLength /\%81v.*/
-"highlight OverLength ctermbg=darkred ctermfg=white guibg=red
-"match OverLength /\%81v.*/
-
 if exists('+colorcolumn')
   set colorcolumn=80
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
-
-
-syntax on 
-filetype on
-filetype plugin indent on    " enable loading indent file for filetype
-
-" Turn of smartindento
-"set nosmartindent
 
 " Change error color 
 highlight clear SpellBad
@@ -166,9 +110,8 @@ highlight GitGutterChange ctermfg=yellow guifg=yellow
 highlight GitGutterDelete ctermfg=red guifg=red
 highlight GitGutterChangeDelete ctermfg=yellow guifg=yellow
 
-filetype plugin on
 
-" ---------------- LATEX ---------------------
+" ------------------------------ LATEX ----------------------------------------
 " Compile main Latex file in directory
 map <F2> :! grep "documentclass" *.tex -l \| xargs pdflatex <CR>
 " Open pdf file
@@ -189,11 +132,10 @@ map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
 
-" ---------------- PYTHON -------------------
+" --------------------------------- PYTHON ------------------------------------
 " Python alias
 let @n = 'v%S)inp.array'
 let @s = 'ebvf)S]'
-" Keystroke to add imports
 nnoremap <leader>p iimport matplotlib.pyplot as plt <CR>import numpy as np<Esc>
 
 
