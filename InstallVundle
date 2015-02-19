@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -d "./bundle/Vundle.vim" ] ; then
+    echo "Installing vundle"
+    git clone https://github.com/gmarik/Vundle.vim.git ./bundle/Vundle.vim
+else
+    echo "Vundle already installed"
+fi
