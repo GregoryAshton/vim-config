@@ -42,6 +42,12 @@ noremap <C-S-x> "+x
 noremap <C-S-c> "+y
 noremap <C-S-p> "+P
 
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Bash like completion
 set wildmode=longest,list,full
 
