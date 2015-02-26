@@ -18,6 +18,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vasconcelloslf/vim-interestingwords'
 Plugin 'ntpeters/vim-better-whitespace'  
+Plugin 'blueyed/vim-diminactive'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -112,6 +113,9 @@ highlight GitGutterChange ctermfg=yellow guifg=yellow
 highlight GitGutterDelete ctermfg=red guifg=red
 highlight GitGutterChangeDelete ctermfg=yellow guifg=yellow
 
+" vim-diminactive setup
+let g:diminactive_use_colorcolumn = 0
+let g:diminactive_use_syntax = 1
 
 " ------------------------------ LATEX ----------------------------------------
 " Compile main Latex file in directory
