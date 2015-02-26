@@ -35,7 +35,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
+au BufNewFile,BufReadPost *.md set filetype=markdown " Syntax highlight for md
 
 " Copy and Paste
 noremap <C-S-x> "+x
